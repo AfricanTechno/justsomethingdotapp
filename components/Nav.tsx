@@ -21,7 +21,7 @@ export default function Nav() {
         aria-label="Primary"
       >
         <Link href="/" aria-label="JustSomething home" className="flex items-center">
-          <BrandMark height={30} />
+          <BrandMark />
         </Link>
 
         <ul className="hidden gap-8 md:flex">

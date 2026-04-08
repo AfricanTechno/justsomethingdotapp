@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <BrandMark height={28} />
+            <BrandMark />
             <p className="mt-3 max-w-sm text-sm text-ink-muted">
               Simple apps. Clear tracking.
             </p>

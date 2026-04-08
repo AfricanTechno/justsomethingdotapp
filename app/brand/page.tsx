@@ -160,18 +160,17 @@ export default function BrandPage() {
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
           <div className="rounded-3xl border border-black/5 bg-white p-10">
             <div className="flex h-40 items-center justify-center">
-              <Image
-                src="/brand/justsomething.png"
-                alt="JustSomething parent logo"
-                width={480}
-                height={160}
-                className="h-full w-auto"
-              />
+              <span className="text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+                Just<span className="text-ink-muted">Something</span>
+              </span>
             </div>
             <div className="mt-6 text-xs font-semibold uppercase tracking-widest text-ink-muted">
-              Parent mark
+              Parent wordmark
             </div>
-            <div className="mt-1 text-sm">JustSomething</div>
+            <div className="mt-1 text-sm">
+              Set as text. Weight 600, tight tracking. &quot;Something&quot;
+              rendered in the muted ink token.
+            </div>
           </div>
 
           <div className="rounded-3xl border border-black/5 bg-white p-10">
