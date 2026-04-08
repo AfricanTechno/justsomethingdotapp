@@ -6,9 +6,7 @@ export const metadata: Metadata = {
   description: "Get help with any Just app — questions, issues, or feedback.",
 };
 
-// NOTE: Replace support@justsomething.app with the production support address
-// before launch.
-const SUPPORT_EMAIL = "support@justsomething.app";
+const SUPPORT_EMAIL = "info@africantechno.com";
 
 const topics = [
   {

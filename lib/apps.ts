@@ -8,6 +8,7 @@ export type JustApp = {
   accent: "bp" | "weight" | "glucose" | "neutral";
   status: AppStatus;
   testflightUrl?: string;
+  icon: string;
 };
 
 // Current apps in the Just family. Add new entries here to expand the site.
@@ -20,14 +21,16 @@ export const apps: JustApp[] = [
     accent: "bp",
     status: "available",
     testflightUrl: "https://testflight.apple.com/join/1NqxSEA2",
+    icon: "/icons/just-bp.png",
   },
   {
     slug: "just-weight",
     name: "Just Weight",
-    tagline: "Weight, without the noise.",
+    tagline: "Weight, without the wait.",
     description: "A simple weight logging app.",
     accent: "weight",
     status: "coming-soon",
+    icon: "/icons/just-weight.png",
   },
   {
     slug: "just-glucose",
@@ -36,12 +39,11 @@ export const apps: JustApp[] = [
     description: "A simple glucose tracking app.",
     accent: "glucose",
     status: "coming-soon",
+    icon: "/icons/just-glucose.png",
   },
 ];
 
 export const futureApps: { name: string; hint: string }[] = [
-  { name: "Just Sleep", hint: "Rest, gently noted." },
-  { name: "Just Water", hint: "Hydration at a glance." },
-  { name: "Just Meds", hint: "Quiet medication reminders." },
-  { name: "Just Steps", hint: "Movement, uncomplicated." },
+  { name: "Just Move", hint: "Movement, uncomplicated." },
+  { name: "Just Read", hint: "Reading, kept simple." },
 ];

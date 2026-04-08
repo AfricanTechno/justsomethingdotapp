@@ -24,7 +24,7 @@ export default function AppsPage() {
       </Section>
 
       <Section eyebrow="On the way" title="Future apps">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2">
           {futureApps.map((f) => (
             <div
               key={f.name}

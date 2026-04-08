@@ -93,7 +93,7 @@ export default function HomePage() {
         title="The family is growing."
         intro="We release new Just apps when they feel truly useful. Here are a few ideas we're exploring."
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2">
           {futureApps.map((f) => (
             <div
               key={f.name}

@@ -45,7 +45,7 @@ const sections: { title: string; body: string }[] = [
   },
   {
     title: "Contact",
-    body: "Questions about privacy? Email support@justsomething.app and we'll respond as soon as we can.",
+    body: "Questions about privacy? Email info@africantechno.com and we'll respond as soon as we can.",
   },
 ];
 
