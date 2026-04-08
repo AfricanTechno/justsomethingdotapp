@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import BrandMark from "./BrandMark";
 
 const links = [
   { href: "/", label: "Home" },
@@ -19,12 +20,8 @@ export default function Nav() {
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
         aria-label="Primary"
       >
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span
-            aria-hidden
-            className="inline-block h-6 w-6 rounded-lg bg-gradient-to-br from-accent-glucose via-accent-weight to-accent-bp"
-          />
-          <span>Just Apps</span>
+        <Link href="/" aria-label="JustSomething home">
+          <BrandMark size={28} />
         </Link>
 
         <ul className="hidden gap-8 md:flex">
