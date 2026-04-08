@@ -16,9 +16,10 @@ export default function AppCard({ app }: { app: JustApp }) {
         <Image
           src={app.icon}
           alt={`${app.name} app icon`}
-          width={64}
-          height={64}
-          className="h-16 w-16 rounded-2xl"
+          width={72}
+          height={72}
+          className="h-18 w-18 rounded-2xl"
+          style={{ height: 72, width: 72 }}
         />
         <span className="rounded-full bg-black/[0.04] px-3 py-1 text-xs font-medium text-ink-muted">
           {statusLabel[app.status]}

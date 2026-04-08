@@ -1,18 +1,21 @@
 import Image from "next/image";
 
-// The /public/brand/justsomething.png file is the full lockup
-// (icon + wordmark). BrandMark renders it at a given pixel height;
-// width scales automatically.
-export default function BrandMark({ height = 28 }: { height?: number }) {
+// Renders the full JustSomething horizontal lockup (icon + wordmark)
+// from public/brand/justsomething.png, sized by pixel height.
+// Source image is tightly cropped (1185 x 278).
+const SRC_W = 1185;
+const SRC_H = 278;
+
+export default function BrandMark({ height = 32 }: { height?: number }) {
+  const width = Math.round((height * SRC_W) / SRC_H);
   return (
     <Image
       src="/brand/justsomething.png"
       alt="JustSomething"
-      width={height * 4}
+      width={width}
       height={height}
       priority
-      className="w-auto"
-      style={{ height }}
+      style={{ height, width }}
     />
   );
 }
