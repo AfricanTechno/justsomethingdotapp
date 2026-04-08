@@ -20,8 +20,8 @@ export default function Nav() {
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
         aria-label="Primary"
       >
-        <Link href="/" aria-label="JustSomething home">
-          <BrandMark size={28} />
+        <Link href="/" aria-label="JustSomething home" className="flex items-center">
+          <BrandMark height={28} />
         </Link>
 
         <ul className="hidden gap-8 md:flex">

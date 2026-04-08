@@ -1,25 +1,18 @@
 import Image from "next/image";
 
-export default function BrandMark({
-  size = 24,
-  withWordmark = true,
-}: {
-  size?: number;
-  withWordmark?: boolean;
-}) {
+// The /public/brand/justsomething.png file is the full lockup
+// (icon + wordmark). BrandMark renders it at a given pixel height;
+// width scales automatically.
+export default function BrandMark({ height = 28 }: { height?: number }) {
   return (
-    <span className="inline-flex items-center gap-2">
-      <Image
-        src="/brand/justsomething-mark.png"
-        alt=""
-        width={size}
-        height={size}
-        className="rounded-[22%]"
-        aria-hidden
-      />
-      {withWordmark && (
-        <span className="font-semibold tracking-tight">JustSomething</span>
-      )}
-    </span>
+    <Image
+      src="/brand/justsomething.png"
+      alt="JustSomething"
+      width={height * 4}
+      height={height}
+      priority
+      className="w-auto"
+      style={{ height }}
+    />
   );
 }
