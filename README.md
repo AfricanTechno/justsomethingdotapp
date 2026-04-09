@@ -21,6 +21,23 @@ Then open http://localhost:3000.
 - `npm run build` — production build
 - `npm run start` — run the production build
 
+## Deployment
+
+- This site is deployed on **Cloudflare Pages**, not Vercel.
+- `next.config.mjs` uses `output: "export"` so `npm run build` produces the
+  static `out/` directory used for deployment.
+- Production deploys happen from `.github/workflows/ci.yml` on pushes to
+  `main`, using `wrangler pages deploy out --project-name=justsomethingdotapp --branch=main`.
+- For a manual preview deploy from a branch, build first and then run:
+
+```bash
+npm run build
+wrangler pages deploy out --project-name=justsomethingdotapp --branch=<branch-name>
+```
+
+- Do not set this repo up on Vercel unless the hosting platform is being
+  intentionally migrated.
+
 ## Project structure
 
 ```
