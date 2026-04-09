@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import AppCard from "@/components/AppCard";
+import Reveal from "@/components/Reveal";
 import { apps, futureApps } from "@/lib/apps";
 
 export default function HomePage() {
@@ -9,19 +10,19 @@ export default function HomePage() {
       {/* Hero */}
       <section className="bg-grid">
         <div className="mx-auto max-w-6xl px-6 pb-24 pt-20 sm:pt-28">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-ink-muted">
+          <Reveal as="p" className="mb-5 text-xs font-semibold uppercase tracking-widest text-ink-muted">
             justsomething.app
-          </p>
-          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
+          </Reveal>
+          <Reveal as="h1" delay={80} className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
             Simple health tracking, without the clutter.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink-muted sm:text-xl">
+          </Reveal>
+          <Reveal as="p" delay={160} className="mt-6 max-w-2xl text-lg text-ink-muted sm:text-xl">
             A growing family of focused apps. One thing each. Quick to log,
             calm to use, and designed to stay out of your way.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
+          </Reveal>
+          <Reveal delay={240} className="mt-10 flex flex-wrap gap-3">
             <Link
-              href="/apps"
+              href="#apps"
               className="inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-medium text-white transition hover:bg-ink-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
             >
               View apps
@@ -32,7 +33,7 @@ export default function HomePage() {
             >
               Get support
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -44,8 +45,10 @@ export default function HomePage() {
         intro="Every Just app does a single job well — no dashboards to configure, no feeds to scroll."
       >
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {apps.map((app) => (
-            <AppCard key={app.slug} app={app} />
+          {apps.map((app, i) => (
+            <Reveal key={app.slug} delay={i * 100}>
+              <AppCard app={app} />
+            </Reveal>
           ))}
         </div>
       </Section>
@@ -54,7 +57,7 @@ export default function HomePage() {
       <section className="border-y border-black/5 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="grid gap-12 lg:grid-cols-2">
-            <div>
+            <Reveal>
               <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-ink-muted">
                 Philosophy
               </div>
@@ -66,21 +69,23 @@ export default function HomePage() {
                 app focuses on a single measurement so logging feels effortless
                 and the numbers stay readable.
               </p>
-            </div>
+            </Reveal>
             <ul className="grid gap-6 sm:grid-cols-2">
               {[
                 ["Single purpose", "One app, one job — no feature creep."],
                 ["Low friction", "Log an entry in a tap or two."],
                 ["Clarity first", "Calm screens, readable numbers."],
                 ["Useful, not loud", "Helpful without getting in the way."],
-              ].map(([t, d]) => (
-                <li
+              ].map(([t, d], i) => (
+                <Reveal
                   key={t}
+                  as="li"
+                  delay={i * 80}
                   className="rounded-2xl border border-black/5 bg-paper p-5"
                 >
                   <div className="text-sm font-semibold">{t}</div>
                   <div className="mt-1 text-sm text-ink-muted">{d}</div>
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>
@@ -94,9 +99,10 @@ export default function HomePage() {
         intro="We release new Just apps when they feel truly useful. Here are a few ideas we're exploring."
       >
         <div className="grid gap-4 sm:grid-cols-2">
-          {futureApps.map((f) => (
-            <div
+          {futureApps.map((f, i) => (
+            <Reveal
               key={f.name}
+              delay={i * 100}
               className="rounded-2xl border border-dashed border-black/15 bg-white/60 p-5"
             >
               <div className="text-sm font-semibold text-ink">{f.name}</div>
@@ -104,14 +110,14 @@ export default function HomePage() {
               <div className="mt-4 text-xs uppercase tracking-wider text-ink-muted">
                 Coming soon
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Section>
 
       {/* Trust / privacy */}
       <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center">
+        <Reveal className="mx-auto max-w-4xl px-6 py-20 text-center">
           <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-ink-muted">
             Built with care
           </div>
@@ -126,12 +132,12 @@ export default function HomePage() {
             </Link>
             .
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Final CTA */}
       <section className="bg-grid">
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center">
+        <Reveal className="mx-auto max-w-4xl px-6 py-24 text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             Explore the Just family.
           </h2>
@@ -141,7 +147,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/apps"
+              href="#apps"
               className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-white hover:bg-ink-soft"
             >
               View apps
@@ -153,7 +159,7 @@ export default function HomePage() {
               Get support
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

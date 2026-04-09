@@ -4,21 +4,21 @@ import AppCard from "@/components/AppCard";
 import { apps } from "@/lib/apps";
 
 describe("<AppCard />", () => {
-  it("renders the TestFlight CTA when a URL is provided", () => {
+  it("shows a Building badge for in-development apps", () => {
     const bp = apps.find((a) => a.slug === "just-bp")!;
     render(<AppCard app={bp} />);
-    const link = screen.getByRole("link", { name: /testflight/i });
-    expect(link).toHaveAttribute("href", bp.testflightUrl);
-    expect(link).toHaveAttribute("target", "_blank");
-  });
-
-  it("shows a Coming Soon badge for unreleased apps", () => {
-    const weight = apps.find((a) => a.slug === "just-weight")!;
-    render(<AppCard app={weight} />);
-    expect(screen.getByText(/coming soon/i)).toBeInTheDocument();
+    expect(screen.getByText(/building/i)).toBeInTheDocument();
     expect(
       screen.queryByRole("link", { name: /testflight/i }),
     ).not.toBeInTheDocument();
+  });
+
+  it("renders the App Store CTA when an appStoreUrl is provided", () => {
+    const glucose = apps.find((a) => a.slug === "just-glucose")!;
+    render(<AppCard app={glucose} />);
+    const link = screen.getByRole("link", { name: /app store/i });
+    expect(link).toHaveAttribute("href", glucose.appStoreUrl);
+    expect(link).toHaveAttribute("target", "_blank");
   });
 
   it("renders the app name and description", () => {

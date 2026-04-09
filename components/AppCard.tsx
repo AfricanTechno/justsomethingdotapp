@@ -5,6 +5,7 @@ const statusLabel = {
   available: "Available",
   "in-progress": "In Progress",
   "coming-soon": "Coming Soon",
+  building: "Building",
 } as const;
 
 export default function AppCard({ app }: { app: JustApp }) {
@@ -33,7 +34,23 @@ export default function AppCard({ app }: { app: JustApp }) {
         {app.tagline}
       </div>
 
-      {app.testflightUrl && (
+      {app.appStoreUrl ? (
+        <a
+          href={app.appStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Download ${app.name} on the App Store`}
+          className="mt-6 inline-flex self-start rounded-xl transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
+        >
+          <Image
+            src="/badges/app-store.svg"
+            alt="Download on the App Store"
+            width={180}
+            height={60}
+            className="h-12 w-auto"
+          />
+        </a>
+      ) : app.testflightUrl && (
         <a
           href={app.testflightUrl}
           target="_blank"
