@@ -80,11 +80,6 @@ export default function PrivacyPage() {
             </section>
           ))}
         </div>
-
-        <p className="mt-6 text-xs text-ink-muted">
-          This page is a starter template and should be reviewed by a
-          qualified legal professional before production use.
-        </p>
       </article>
     </>
   );
