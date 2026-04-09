@@ -14,18 +14,12 @@ describe("app family data", () => {
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 
-  it("Just Weight is building", () => {
-    expect(apps.find((a) => a.slug === "just-weight")?.status).toBe("building");
-  });
-
-  it("Just Glucose and Just BP are available with App Store links", () => {
-    const glucose = apps.find((a) => a.slug === "just-glucose");
-    expect(glucose?.status).toBe("available");
-    expect(glucose?.appStoreUrl).toMatch(/^https:\/\/apps\.apple\.com\//);
-
-    const bp = apps.find((a) => a.slug === "just-bp");
-    expect(bp?.status).toBe("available");
-    expect(bp?.appStoreUrl).toMatch(/^https:\/\/apps\.apple\.com\//);
+  it("all three apps are available with App Store links", () => {
+    for (const slug of ["just-bp", "just-weight", "just-glucose"]) {
+      const app = apps.find((a) => a.slug === slug);
+      expect(app?.status).toBe("available");
+      expect(app?.appStoreUrl).toMatch(/^https:\/\/apps\.apple\.com\//);
+    }
   });
 
   it("exposes at least one future app placeholder", () => {

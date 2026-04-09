@@ -40,7 +40,8 @@ export const apps: JustApp[] = [
     tagline: "Weight, without the wait.",
     description: "A simple weight logging app.",
     accent: "weight",
-    status: "building",
+    status: "available",
+    appStoreUrl: "https://apps.apple.com/us/app/just-weight-no-wait/id6761859022",
     icon: "/icons/just-weight.png",
   },
 ];
