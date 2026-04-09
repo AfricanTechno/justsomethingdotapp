@@ -9,7 +9,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="bg-grid">
-        <div className="mx-auto max-w-6xl px-6 pb-24 pt-20 sm:pt-28">
+        <div className="mx-auto max-w-6xl px-6 pb-10 pt-20 sm:pb-16 sm:pt-28">
           <Reveal as="p" className="mb-5 text-xs font-semibold uppercase tracking-widest text-ink-muted">
             justsomething.app
           </Reveal>
@@ -20,7 +20,7 @@ export default function HomePage() {
             A growing family of focused apps. One thing each. Quick to log,
             calm to use, and designed to stay out of your way.
           </Reveal>
-          <Reveal delay={240} className="mt-10 flex flex-wrap gap-3">
+          <Reveal delay={240} className="mt-8 flex flex-wrap gap-3">
             <Link
               href="#apps"
               className="inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-medium text-white transition hover:bg-ink-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
@@ -55,7 +55,7 @@ export default function HomePage() {
 
       {/* Philosophy */}
       <section className="border-y border-black/5 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
           <div className="grid gap-12 lg:grid-cols-2">
             <Reveal>
               <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-ink-muted">
@@ -117,7 +117,7 @@ export default function HomePage() {
 
       {/* Trust / privacy */}
       <section className="bg-white">
-        <Reveal className="mx-auto max-w-4xl px-6 py-20 text-center">
+        <Reveal className="mx-auto max-w-4xl px-6 py-14 text-center sm:py-16">
           <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-ink-muted">
             Built with care
           </div>
@@ -137,7 +137,7 @@ export default function HomePage() {
 
       {/* Final CTA */}
       <section className="bg-grid">
-        <Reveal className="mx-auto max-w-4xl px-6 py-24 text-center">
+        <Reveal className="mx-auto max-w-4xl px-6 py-16 text-center sm:py-20">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             Explore the Just family.
           </h2>
