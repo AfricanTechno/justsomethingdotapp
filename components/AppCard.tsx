@@ -11,7 +11,7 @@ const statusLabel = {
 export default function AppCard({ app }: { app: JustApp }) {
   return (
     <article
-      className="group relative flex flex-col rounded-3xl border border-black/5 bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:shadow-lg"
+      className="group relative flex h-full flex-col rounded-3xl border border-black/5 bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:shadow-lg"
     >
       <div className="flex items-center justify-between">
         <Image
@@ -40,7 +40,7 @@ export default function AppCard({ app }: { app: JustApp }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Download ${app.name} on the App Store`}
-          className="mt-6 inline-flex self-start rounded-xl transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
+          className="mt-auto inline-flex self-start rounded-xl pt-6 transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
         >
           <Image
             src="/badges/app-store.svg"

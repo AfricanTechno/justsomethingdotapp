@@ -30,7 +30,8 @@ export const apps: JustApp[] = [
     tagline: "Blood pressure, simply logged.",
     description: "A simple blood pressure tracking app.",
     accent: "bp",
-    status: "building",
+    status: "available",
+    appStoreUrl: "https://apps.apple.com/us/app/just-bp/id6761688889",
     icon: "/icons/just-bp.png",
   },
   {

@@ -46,7 +46,7 @@ export default function HomePage() {
       >
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {apps.map((app, i) => (
-            <Reveal key={app.slug} delay={i * 100}>
+            <Reveal key={app.slug} delay={i * 100} className="h-full">
               <AppCard app={app} />
             </Reveal>
           ))}

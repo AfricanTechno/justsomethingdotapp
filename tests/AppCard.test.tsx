@@ -5,11 +5,11 @@ import { apps } from "@/lib/apps";
 
 describe("<AppCard />", () => {
   it("shows a Building badge for in-development apps", () => {
-    const bp = apps.find((a) => a.slug === "just-bp")!;
-    render(<AppCard app={bp} />);
+    const weight = apps.find((a) => a.slug === "just-weight")!;
+    render(<AppCard app={weight} />);
     expect(screen.getByText(/building/i)).toBeInTheDocument();
     expect(
-      screen.queryByRole("link", { name: /testflight/i }),
+      screen.queryByRole("link", { name: /app store/i }),
     ).not.toBeInTheDocument();
   });
 
