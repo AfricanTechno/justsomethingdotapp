@@ -77,8 +77,8 @@ and read from `lib/apps.ts`.
   be reviewed by a qualified legal professional before production.
 - **Favicon / OG image** — referenced in `app/layout.tsx` metadata; add real
   assets under `public/`.
-- **App Store links** — not yet wired up; add buttons on each app card or a
-  future `/apps/[slug]` page.
+- **Per-app detail routes** — if each Just app needs its own landing page,
+  add `app/apps/[slug]/page.tsx` and route from `lib/apps.ts`.
 
 ## Design notes
 
