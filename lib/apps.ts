@@ -1,4 +1,9 @@
-export type AppStatus = "available" | "in-progress" | "coming-soon" | "building";
+export type AppStatus =
+  | "available"
+  | "pre-release"
+  | "in-progress"
+  | "coming-soon"
+  | "building";
 
 export type JustApp = {
   slug: string;
@@ -9,6 +14,7 @@ export type JustApp = {
   status: AppStatus;
   testflightUrl?: string;
   appStoreUrl?: string;
+  releaseNote?: string;
   icon: string;
 };
 
@@ -43,6 +49,16 @@ export const apps: JustApp[] = [
     status: "available",
     appStoreUrl: "https://apps.apple.com/us/app/just-weight-no-wait/id6761859022",
     icon: "/icons/just-weight.png",
+  },
+  {
+    slug: "just-food",
+    name: "Just Food - Journal",
+    tagline: "Food, simply journaled.",
+    description: "A simple food journal for quick daily logging.",
+    accent: "neutral",
+    status: "pre-release",
+    releaseNote: "Pre-release planned for 30 April 2026.",
+    icon: "/icons/just-food.png",
   },
 ];
 

@@ -20,4 +20,14 @@ describe("<AppCard />", () => {
     ).toBeInTheDocument();
     expect(screen.getByText(glucose.description)).toBeInTheDocument();
   });
+
+  it("renders the prerelease note when provided", () => {
+    const food = apps.find((a) => a.slug === "just-food")!;
+    render(<AppCard app={food} />);
+
+    expect(screen.getByText(food.releaseNote!)).toBeInTheDocument();
+    expect(
+      screen.getByText("Pre-release", { selector: "span" }),
+    ).toBeInTheDocument();
+  });
 });
